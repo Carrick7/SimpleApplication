@@ -8,6 +8,8 @@ pm2 stop SimpleApplication
 cd SimpleApplication/
 # Install application dependencies
 npm install
+echo $privatekey > privatekey.pem
+echo $server > server.crt
 # pm2 save error
 sudo pm2 save --force
 # Start the applciation with the process name SimpleApplication using pm2
