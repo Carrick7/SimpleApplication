@@ -44,6 +44,9 @@ jobs:
           name: docker-login
           command: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - run: 
+          name: docker-prune
+          command: docker system prune --all --force --volumes
+      - run: 
           name: build-docker-image
           command: docker build -t $IMAGE_NAME:latest .
       - run: 
